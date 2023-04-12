@@ -1,0 +1,26 @@
+name: .NET
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+
+jobs:
+  
+  action-test:
+    runs-on: macos-latest
+    
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - id: foo
+        uses: actions/BumpMAUIAppVersion@v1
+        with:
+          csproj: tests/MauiApp.csproj
+          version: ${{ github.run_number }}
+          displayVersion: '100.500'
