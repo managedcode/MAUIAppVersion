@@ -7,28 +7,19 @@ inputs:
     default: '1'
   version:
     description: 'Value for ApplicationVersion property'
-    required: true
+    required: false
     default: '1'
   displayVersion:
     description: 'Value for ApplicationVersion property'
-    required: true
+    required: false
     default: '1.0'
+  printFile:
+    description: 'Print file content'
+    required: false
+    default: true
+#outputs:
+#  time: # id of output
+#    description: 'The time we greeted you'
 runs:
-  using: "composite"
-  steps:
-    - name: Bump ApplicationVersion (build version)
-      shell: bash
-      run: |
-        echo 'Setting ApplicationVersion (build version) to ${{ inputs.version }}'
-        sed -rn 's|(<ApplicationVersion>)(.*)(</ApplicationVersion>)|Old: \1\2\3|p' ${{ inputs.csproj }}
-        sed -rE 's|(<ApplicationVersion>)(.*)(</ApplicationVersion>)|<ApplicationVersion>${{ inputs.version }}</ApplicationVersion>|g' ${{ inputs.csproj }}
-        sed -rn 's|(<ApplicationVersion>)(.*)(</ApplicationVersion>)|New: \1\2\3|p' ${{ inputs.csproj }}   
-        
-    - name: Bump ApplicationDisplayVersion (build version)
-      shell: bash
-      run: |
-        echo 'Setting ApplicationDisplayVersion (build version) to ${{ inputs.displayVersion }}'
-        sed -rn 's|(<ApplicationDisplayVersion>)(.*)(</ApplicationDisplayVersion>)|Old: \1\2\3|p' ${{ inputs.csproj }}
-        sed -rE 's|(<ApplicationDisplayVersion>)(.*)(</ApplicationDisplayVersion>)|<ApplicationDisplayVersion>${{ inputs.displayVersion }}</ApplicationDisplayVersion>|g' ${{ inputs.csproj }}
-        sed -rn 's|(<ApplicationDisplayVersion>)(.*)(</ApplicationDisplayVersion>)|New: \1\2\3|p' ${{ inputs.csproj }}   
-
+  using: 'node16'
+  main: 'index.js'
