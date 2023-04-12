@@ -1,4 +1,4 @@
-name: 'Bump MAUI App version'
+name: 'MAUIAppVersion'
 description: 'Bump ApplicationVersion and ApplicationDisplayVersion'
 inputs:
   csproj:
