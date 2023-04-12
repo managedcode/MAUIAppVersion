@@ -21,7 +21,7 @@ runs:
       run: |
         echo 'Setting ApplicationVersion (build version) to ${{ inputs.version }}'
         sed -rn 's|(<ApplicationVersion>)(.*)(</ApplicationVersion>)|Old: \1\2\3|p' ${{ inputs.csproj }}
-        sed -rE -i 'notneeded.bak' 's|(<ApplicationVersion>)(.*)(</ApplicationVersion>)|<ApplicationVersion>${{ inputs.version }}</ApplicationVersion>|g' ${{ inputs.csproj }}
+        sed -rE -i notneeded.bak 's|(<ApplicationVersion>)(.*)(</ApplicationVersion>)|<ApplicationVersion>${{ inputs.version }}</ApplicationVersion>|g' ${{ inputs.csproj }}
         sed -rn 's|(<ApplicationVersion>)(.*)(</ApplicationVersion>)|New: \1\2\3|p' ${{ inputs.csproj }}   
         
     - name: Bump ApplicationDisplayVersion (build version)
@@ -29,6 +29,6 @@ runs:
       run: |
         echo 'Setting ApplicationDisplayVersion (build version) to ${{ inputs.displayVersion }}'
         sed -rn 's|(<ApplicationDisplayVersion>)(.*)(</ApplicationDisplayVersion>)|Old: \1\2\3|p' ${{ inputs.csproj }}
-        sed -rE -i 'notneeded.bak' 's|(<ApplicationDisplayVersion>)(.*)(</ApplicationDisplayVersion>)|<ApplicationDisplayVersion>${{ inputs.displayVersion }}</ApplicationDisplayVersion>|g' ${{ inputs.csproj }}
+        sed -rE -i notneeded.bak 's|(<ApplicationDisplayVersion>)(.*)(</ApplicationDisplayVersion>)|<ApplicationDisplayVersion>${{ inputs.displayVersion }}</ApplicationDisplayVersion>|g' ${{ inputs.csproj }}
         sed -rn 's|(<ApplicationDisplayVersion>)(.*)(</ApplicationDisplayVersion>)|New: \1\2\3|p' ${{ inputs.csproj }}   
 
