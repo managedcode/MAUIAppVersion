@@ -17,6 +17,7 @@ runs:
   using: "composite"
   steps:
     - name: Bump ApplicationVersion (build version)
+      shell: bash
       run: |
         echo 'Setting ApplicationVersion (build version) to ${{ inputs.version }}'
         sed -rn 's|(<ApplicationVersion>)(.*)(</ApplicationVersion>)|Old: \1\2\3|p' ${{ inputs.csproj }}
@@ -24,6 +25,7 @@ runs:
         sed -rn 's|(<ApplicationVersion>)(.*)(</ApplicationVersion>)|New: \1\2\3|p' ${{ inputs.csproj }}   
         
     - name: Bump ApplicationDisplayVersion (build version)
+      shell: bash
       run: |
         echo 'Setting ApplicationDisplayVersion (build version) to ${{ inputs.displayVersion }}'
         sed -rn 's|(<ApplicationDisplayVersion>)(.*)(</ApplicationDisplayVersion>)|Old: \1\2\3|p' ${{ inputs.csproj }}
