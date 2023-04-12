@@ -11,13 +11,32 @@ on:
 
 jobs:
   
-  action-test:
+  action-test-macos:
     runs-on: macos-latest
-    
     steps:
-
       - uses: actions/checkout@v3
+      - name: MAUIAppVersion
+        uses: managedcode/MAUIAppVersion@v0.0.3-alpha
+        with:
+          csproj: tests/MauiApp.csproj
+          version: ${{ github.run_number }}
+          displayVersion: '100.500'
 
+  action-test-winfows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: MAUIAppVersion
+        uses: managedcode/MAUIAppVersion@v0.0.3-alpha
+        with:
+          csproj: tests/MauiApp.csproj
+          version: ${{ github.run_number }}
+          displayVersion: '100.500'
+
+  action-test-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
       - name: MAUIAppVersion
         uses: managedcode/MAUIAppVersion@v0.0.3-alpha
         with:
