@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: MAUIAppVersion
-        uses: managedcode/MAUIAppVersion@v0.0.3-alpha
+        uses: managedcode/MAUIAppVersion@v0.0.4-alpha
         with:
           csproj: tests/MauiApp.csproj
           version: ${{ github.run_number }}
@@ -27,7 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: MAUIAppVersion
-        uses: managedcode/MAUIAppVersion@v0.0.3-alpha
+        uses: managedcode/MAUIAppVersion@v0.0.4-alpha
         with:
           csproj: tests/MauiApp.csproj
           version: ${{ github.run_number }}
@@ -38,7 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: MAUIAppVersion
-        uses: managedcode/MAUIAppVersion@v0.0.3-alpha
+        uses: managedcode/MAUIAppVersion@v0.0.4-alpha
         with:
           csproj: tests/MauiApp.csproj
           version: ${{ github.run_number }}
