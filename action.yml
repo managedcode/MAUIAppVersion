@@ -1,5 +1,8 @@
 name: 'MAUIAppVersion'
 description: 'Bump ApplicationVersion and ApplicationDisplayVersion'
+branding:
+  color: 'purple'  
+  icon: 'corner-left-up'  
 inputs:
   csproj:
     description: 'Path to csproj file'
