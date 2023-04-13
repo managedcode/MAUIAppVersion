@@ -21,6 +21,7 @@ jobs:
           csproj: tests/MauiApp.csproj
           version: ${{ github.run_number }}
           displayVersion: '100.500'
+          printFile: true
 
   action-test-winfows:
     runs-on: windows-latest
@@ -81,4 +82,3 @@ jobs:
         uses: managedcode/MAUIAppVersion@v0.0.5-alpha
         with:
           csproj: tests/MauiApp.csproj
-          printFile: false
