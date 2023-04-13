@@ -74,11 +74,12 @@ jobs:
         with:
           csproj: tests/MauiApp.csproj
 
-  action-test-ubuntu-none:
-    runs-on: ubuntu-latest
+  action-test-ubuntu-none-print:
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
       - name: MAUIAppVersion
         uses: managedcode/MAUIAppVersion@v0.0.5-alpha
         with:
           csproj: tests/MauiApp.csproj
+          printFile: true
