@@ -15,7 +15,6 @@ try {
         core.setFailed("Paramenter csproj is required.");
     }
     
-
     // match <ApplicationVersion> followed by any sequence of characters that are not a '<', followed by </ApplicationVersion>
     const applicationVersionPattern = /<ApplicationVersion>[^<]*<\/ApplicationVersion>/g; 
     const applicationDisplayVersionPattern = /<ApplicationDisplayVersion>[^<]*<\/ApplicationDisplayVersion>/g; 
@@ -26,6 +25,8 @@ try {
         var updatedApplicationVersion = fileContents.replace(applicationVersionPattern, `<ApplicationVersion>${version}</ApplicationVersion>`);
         // Write the updated contents back to the file
         fs.writeFileSync(csproj, updatedApplicationVersion, 'utf8');
+
+        console.log(`<ApplicationVersion>${version}</ApplicationVersion>`);
     } 
 
     if (displayVersion && displayVersion.trim() !== '') {
@@ -34,6 +35,8 @@ try {
         var updatedApplicationVersion = fileContents.replace(applicationDisplayVersionPattern, `<ApplicationDisplayVersion>${displayVersion}</ApplicationDisplayVersion>`);
         // Write the updated contents back to the file
         fs.writeFileSync(csproj, updatedApplicationVersion, 'utf8');
+
+        console.log(`<ApplicationDisplayVersion>${displayVersion}</ApplicationDisplayVersion>`);
     }
 
     if(printFile) {

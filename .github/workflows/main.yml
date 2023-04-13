@@ -43,3 +43,42 @@ jobs:
           csproj: tests/MauiApp.csproj
           version: ${{ github.run_number }}
           displayVersion: '100.500'
+
+  action-test-ubuntu-diaplay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: MAUIAppVersion
+        uses: managedcode/MAUIAppVersion@v0.0.5-alpha
+        with:
+          csproj: tests/MauiApp.csproj
+          displayVersion: '100.500'
+
+  action-test-ubuntu-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: MAUIAppVersion
+        uses: managedcode/MAUIAppVersion@v0.0.5-alpha
+        with:
+          csproj: tests/MauiApp.csproj
+          version: ${{ github.run_number }}
+
+  action-test-ubuntu-none:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: MAUIAppVersion
+        uses: managedcode/MAUIAppVersion@v0.0.5-alpha
+        with:
+          csproj: tests/MauiApp.csproj
+
+  action-test-ubuntu-none:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: MAUIAppVersion
+        uses: managedcode/MAUIAppVersion@v0.0.5-alpha
+        with:
+          csproj: tests/MauiApp.csproj
+          printFile: false
