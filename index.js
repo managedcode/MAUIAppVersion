@@ -39,8 +39,9 @@ try {
         console.log(`<ApplicationDisplayVersion>${displayVersion}</ApplicationDisplayVersion>`);
     }
 
-    if(printFile) {
+    if(printFile == true) {
         var fileContents = fs.readFileSync(csproj, 'utf8');
+        console.log('');
         console.log(fileContents);
     }
 } 
