@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: MAUIAppVersion
-        uses: managedcode/MAUIAppVersion@v0.0.5-alpha
+        uses: managedcode/MAUIAppVersion@v1
         with:
           csproj: tests/MauiApp.csproj
           version: ${{ github.run_number }}
@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: MAUIAppVersion
-        uses: managedcode/MAUIAppVersion@v0.0.5-alpha
+        uses: managedcode/MAUIAppVersion@v1
         with:
           csproj: tests/MauiApp.csproj
           version: ${{ github.run_number }}
@@ -39,7 +39,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: MAUIAppVersion
-        uses: managedcode/MAUIAppVersion@v0.0.5-alpha
+        uses: managedcode/MAUIAppVersion@v1
         with:
           csproj: tests/MauiApp.csproj
           version: ${{ github.run_number }}
@@ -50,7 +50,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: MAUIAppVersion
-        uses: managedcode/MAUIAppVersion@v0.0.5-alpha
+        uses: managedcode/MAUIAppVersion@v1
         with:
           csproj: tests/MauiApp.csproj
           displayVersion: '100.500'
@@ -60,7 +60,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: MAUIAppVersion
-        uses: managedcode/MAUIAppVersion@v0.0.5-alpha
+        uses: managedcode/MAUIAppVersion@v1
         with:
           csproj: tests/MauiApp.csproj
           version: ${{ github.run_number }}
@@ -70,7 +70,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: MAUIAppVersion
-        uses: managedcode/MAUIAppVersion@v0.0.5-alpha
+        uses: managedcode/MAUIAppVersion@v1
         with:
           csproj: tests/MauiApp.csproj
 
@@ -79,7 +79,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: MAUIAppVersion
-        uses: managedcode/MAUIAppVersion@v0.0.5-alpha
+        uses: managedcode/MAUIAppVersion@v1
         with:
           csproj: tests/MauiApp.csproj
           printFile: true
