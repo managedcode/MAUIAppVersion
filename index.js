@@ -10,6 +10,10 @@ try {
     const version = core.getInput('version');
     const displayVersion = core.getInput('displayVersion');
     const printFile = core.getInput('printFile');
+
+    if (version && version.trim() == '') {
+        core.setFailed("Paramenter csproj is required.");
+    }
     
 
     // match <ApplicationVersion> followed by any sequence of characters that are not a '<', followed by </ApplicationVersion>
